@@ -2,17 +2,14 @@ import Checkbox from "../checkbox";
 import Delete from "../delete-btn";
 import "./styles.css";
 
-export default function Task() {
+export default function Task({ text, id, callbackDelete }) {
   return (
     <div className="task">
-      <Checkbox />
-      <label for="task1">
-        <p>
-          Integer urna interdum massa libero auctor neque turpis turpis semper.
-          Duis vel sed fames integer.
-        </p>
+      <Checkbox id={id} />
+      <label>
+        <p id={`text-${id}`}>{text}</p>
       </label>
-      <Delete />
+      <Delete callback={callbackDelete} id={id} />
     </div>
   );
 }
