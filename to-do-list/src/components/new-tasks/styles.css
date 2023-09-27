@@ -1,0 +1,6 @@
+.new-tasks {
+  display: flex;
+  width: 736px;
+  align-items: center;
+  gap: 8px;
+}
