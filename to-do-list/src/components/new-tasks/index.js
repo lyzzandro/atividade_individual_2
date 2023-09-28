@@ -1,15 +1,12 @@
 import Button from "../button";
 import Input from "../input";
 import "./styles.css";
-import { useState } from "react";
 
-export default function NewTasks() {
-  const [text, setText] = useState(null);
-
+export default function NewTasks({ text, setText, list, setList }) {
   return (
     <div className="new-tasks">
-      <Input handleText={setText} />
-      <Button text={text} />
+      <Input handleText={setText} setList={setList} />
+      <Button text={text} list={list} setList={setList} />
     </div>
   );
 }

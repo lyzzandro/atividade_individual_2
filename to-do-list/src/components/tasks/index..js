@@ -1,10 +1,8 @@
 import Task from "../task";
 import "./styles.css";
-import { useState } from "react";
 
-export default function Tasks() {
-  const [list, setList] = useState(["fsefssef", "gggggggggg", "fsefssef"]);
 
+export default function Tasks({ list, setList }) {
   function deleteTask(id) {
     const listaUpdate = list.filter((text, index) => id !== index);
     setList(listaUpdate);
