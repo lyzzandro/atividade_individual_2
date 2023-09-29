@@ -6,6 +6,7 @@ export default function Tasks({ list, setList }) {
   function deleteTask(id) {
     const listaUpdate = list.filter((text, index) => id !== index);
     setList(listaUpdate);
+    localStorage.setItem("list", JSON.stringify(list));
   }
 
   return (

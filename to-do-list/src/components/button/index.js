@@ -6,9 +6,12 @@ export default function Button({ text, list, setList }) {
     <button
       className="button"
       onClick={() => {
-        setList([...list, text]);
+        if (text != null && text != "") {
+          setList([...list, text]);
+          localStorage.setItem("list", JSON.stringify(list));
+        }
 
-        console.log(list);
+        console.log(JSON.parse(localStorage.getItem("list")));
       }}
     >
       <h2>Criar</h2>

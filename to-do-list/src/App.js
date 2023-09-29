@@ -2,13 +2,17 @@ import "./App.css";
 import NewTasks from "./components/new-tasks";
 import Tasks from "./components/tasks/index.";
 import logo from "../src/images/logo.svg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
   const [text, setText] = useState(null);
   const [list, setList] = useState([]);
 
-  localStorage.setItem(list, )
+  useEffect(() => {
+    let localList = JSON.parse(localStorage.getItem("list"));
+    console.log(localList);
+    setList(localList ? localList : []);
+  }, []);
 
   return (
     <div className="App">
